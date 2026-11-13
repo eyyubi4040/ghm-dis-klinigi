@@ -1,0 +1,280 @@
+/* Dt. Gözde Hilal Morkoyunlu Diş Kliniği */
+
+body.pkr-lock { overflow: hidden; }
+
+dialog.pkr {
+	width: min(1160px, calc(100vw - 32px)); max-width: none; max-height: calc(100dvh - 32px);
+	margin: auto; padding: 12px; border: 0; border-radius: 32px; box-sizing: border-box;
+	background: var(--pk-white); color: var(--pk-ink); font-family: var(--pk-font);
+	font-size: 15px; line-height: 1.6; overflow: auto; overscroll-behavior: contain;
+	box-shadow: 0 40px 80px rgba(0, 0, 0, .25);
+}
+dialog.pkr::backdrop { background: rgba(55, 55, 54, .78); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+dialog.pkr[open] { animation: pkrIn .38s var(--pk-ease) both; }
+dialog.pkr[open]::backdrop { animation: pkrFade .3s ease both; }
+dialog.pkr.is-closing { animation: pkrOut .18s ease both; }
+dialog.pkr.is-closing::backdrop { animation: pkrFade .18s ease reverse both; }
+@keyframes pkrIn { from { opacity: 0; transform: translateY(18px) scale(.98); } to { opacity: 1; transform: none; } }
+@keyframes pkrOut { to { opacity: 0; transform: translateY(10px) scale(.985); } }
+@keyframes pkrFade { from { opacity: 0; } to { opacity: 1; } }
+
+.pkr-in { position: relative; display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.4fr); gap: 12px; }
+
+/* --- Sol: bilgi paneli -------------------------------------------- */
+.pkr-info {
+	position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; gap: 32px;
+	padding: 40px; border-radius: 20px; background: var(--pk-ink); color: var(--pk-on-ink);
+}
+.pkr-mark { position: absolute; right: -70px; bottom: -70px; width: 280px; height: 280px; opacity: .12; pointer-events: none; }
+.pkr-head, .pkr-meta { position: relative; }
+dialog.pkr .pkr-title {
+	margin: 0; color: var(--pk-white); font-family: var(--pk-font);
+	font-size: clamp(30px, 3.2vw, 40px); line-height: 1.08; letter-spacing: -.04em; font-weight: 600;
+}
+.pkr-title span { color: var(--pk-teal); }
+.pkr-lead { margin: 18px 0 0; font-size: 16px; font-weight: 300; }
+.pkr-meta { display: flex; flex-direction: column; gap: 20px; }
+.pkr-hours p { display: flex; justify-content: space-between; gap: 12px; margin: 0; padding: 5px 0; font-size: 14px; border-bottom: 1px solid rgba(255, 255, 255, .08); }
+.pkr-hours p:last-child { border-bottom: 0; }
+.pkr-hours b { color: var(--pk-white); font-weight: 400; }
+.pkr-hours .pkr-h { display: block; margin-bottom: 4px; padding: 0; border: 0; color: var(--pk-white); font-weight: 600; font-size: 15px; }
+.pkr-quick { display: flex; gap: 10px; }
+.pkr-quick .pk-b { flex: 1; padding: 0 16px; }
+.pkr-quick svg { width: 16px; height: 16px; color: var(--pk-teal); }
+.pkr-note { margin: 0; font-size: 13px; color: #A3AAA9; }
+.pkr-note a { color: var(--pk-white); text-decoration: none; }
+.pkr-note a:hover { color: var(--pk-teal); }
+
+/* --- Sağ: form ---------------------------------------------------- */
+.pkr-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; align-content: start; padding: 32px 32px 28px 24px; }
+.pkr-f { display: flex; flex-direction: column; gap: 6px; margin: 0; font-size: 13px; font-weight: 500; color: var(--pk-muted); }
+.pkr-f--full, .pkr-foot, .pkr-status { grid-column: 1 / -1; }
+.pkr-f i { font-style: normal; color: var(--pk-teal); }
+:is(dialog.pkr, .pkc-form) .pkr-f input, :is(dialog.pkr, .pkc-form) .pkr-f textarea {
+	width: 100%; height: 50px; margin: 0; padding: 0 16px; box-sizing: border-box;
+	border: 1.5px solid transparent; border-radius: 14px; background: var(--pk-bg); box-shadow: none;
+	font-family: var(--pk-font); font-size: 15px; font-weight: 400; color: var(--pk-ink);
+	outline: none; transition: border-color .25s ease, background-color .25s ease;
+}
+:is(dialog.pkr, .pkc-form) .pkr-f textarea { height: auto; min-height: 96px; padding: 14px 16px; resize: vertical; }
+:is(dialog.pkr, .pkc-form) .pkr-f input:hover, :is(dialog.pkr, .pkc-form) .pkr-f textarea:hover { background: #EDF1F1; }
+:is(dialog.pkr, .pkc-form) .pkr-f input:focus, :is(dialog.pkr, .pkc-form) .pkr-f textarea:focus { border-color: var(--pk-teal); background: var(--pk-white); }
+.pkr-f.is-invalid input, .pkr-f.is-invalid textarea { border-color: #D0574B !important; }
+.pkr-hp { position: absolute !important; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+.pkr-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; margin-top: 6px; }
+.pkr-check { display: flex; gap: 10px; align-items: center; margin: 0; font-size: 14px; color: var(--pk-text); cursor: pointer; }
+.pkr-check input { flex: none; width: 20px; height: 20px; margin: 0; accent-color: var(--pk-teal); }
+.pkr-check a { color: #C59B27; }
+.pkr-check.is-invalid span { color: #D0574B; }
+.pkr-send { min-width: 140px; }
+.pkr-send[aria-busy="true"] { opacity: .7; cursor: progress; }
+.pkr-status { margin: 0; min-height: 0; font-size: 14px; }
+.pkr-status:empty { display: none; }
+.pkr-status.is-ok { padding: 12px 16px; border-radius: 14px; background: rgba(197, 155, 39, .12); color: #A67C1E; }
+.pkr-status.is-error { padding: 12px 16px; border-radius: 14px; background: rgba(208, 87, 75, .1); color: #A8443A; }
+
+.pkr-close {
+	position: absolute; top: 12px; right: 12px; z-index: 2; display: flex; align-items: center; justify-content: center;
+	width: 44px; height: 44px; padding: 0; border: 0; border-radius: 999px; background: var(--pk-bg); color: var(--pk-ink);
+	cursor: pointer; transition: background-color .25s ease, color .25s ease, transform .25s ease;
+}
+dialog.pkr button.pkr-close:focus:not(:focus-visible) { background: var(--pk-bg); color: var(--pk-ink); }
+dialog.pkr button.pkr-close:hover, dialog.pkr button.pkr-close:focus-visible { background: var(--pk-teal); color: var(--pk-white); transform: rotate(90deg); }
+.pkr-close svg { width: 18px; height: 18px; }
+
+/* --- DoktorTakvimi penceresi --------------------------------------- */
+dialog.pkr--embed { width: min(760px, calc(100vw - 32px)); }
+.pkr-embed { position: relative; min-height: 420px; padding: 56px 20px 20px; border-radius: 20px; background: var(--pk-bg); }
+
+/* iOS Safari: tarih/saat alanları kendi genişliğini dayatıp pencereyi yana taşırıyordu. */
+dialog.pkr { overflow-x: hidden; }
+.pkr-form, .pkr-f { min-width: 0; }
+:is(dialog.pkr, .pkc-form) .pkr-f input[type="date"], :is(dialog.pkr, .pkc-form) .pkr-f input[type="time"] {
+	display: block; min-width: 0; max-width: 100%; -webkit-appearance: none; appearance: none; line-height: 50px; text-align: left;
+}
+:is(dialog.pkr, .pkc-form) .pkr-f input::-webkit-date-and-time-value { text-align: left; margin: 0; }
+
+/* --- Tablet / mobil ------------------------------------------------ */
+@media (max-width: 960px) {
+	.pkr-in { grid-template-columns: 1fr; }
+	.pkr-info { padding: 32px 28px; gap: 24px; }
+	.pkr-mark { width: 200px; height: 200px; right: -50px; bottom: -50px; }
+	.pkr-form { padding: 20px 16px 16px; }
+	.pkr-close { top: 20px; right: 20px; background: rgba(255, 255, 255, .12); color: var(--pk-white); }
+}
+@media (max-width: 600px) {
+	dialog.pkr { width: calc(100vw - 16px); max-height: calc(100dvh - 16px); padding: 8px; border-radius: 24px; }
+	.pkr-in { gap: 8px; }
+	.pkr-info { padding: 28px 20px 24px; border-radius: 16px; }
+	.pkr-lead { font-size: 15px; }
+	.pkr-form { grid-template-columns: 1fr; gap: 12px; padding: 16px 8px 8px; }
+	.pkr-quick { flex-direction: column; }
+	.pkr-foot { flex-direction: column; align-items: stretch; }
+	.pkr-send { width: 100%; }
+	.pkr-close { top: 16px; right: 16px; width: 40px; height: 40px; }
+	.pkr-embed { padding: 56px 8px 8px; border-radius: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+	dialog.pkr[open], dialog.pkr[open]::backdrop, dialog.pkr.is-closing, dialog.pkr.is-closing::backdrop { animation: none; }
+	.pkr-close:hover { transform: none; }
+}
+dialog.pkr:focus { outline: none; }
+
+/* Sayfadaki iletişim formu (aynı alan tasarımı) */
+.pkc-form.pkr-form { padding: 0; font-family: var(--pk-font); font-size: 15px; line-height: 1.6; color: var(--pk-ink); }
+@media (max-width: 600px) { .pkc-form.pkr-form { grid-template-columns: 1fr; gap: 12px; } .pkc-form .pkr-foot { flex-direction: column; align-items: stretch; } .pkc-form .pkr-send { width: 100%; } }
+
+/* ========================================================
+   Treatment Pages Modal Card (.pkr-modal & .pkr-card)
+   ======================================================== */
+dialog.pkr-modal {
+	position: fixed !important;
+	inset: 0 !important;
+	width: 100vw !important;
+	height: 100vh !important;
+	max-width: 100vw !important;
+	max-height: 100dvh !important;
+	margin: 0 !important;
+	padding: 24px !important;
+	border: none !important;
+	background: rgba(15, 23, 42, 0.72) !important;
+	backdrop-filter: blur(8px) !important;
+	-webkit-backdrop-filter: blur(8px) !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	box-sizing: border-box !important;
+	z-index: 999999 !important;
+}
+dialog.pkr-modal:not([open]) {
+	display: none !important;
+}
+dialog.pkr-modal::backdrop {
+	background: rgba(15, 23, 42, 0.72) !important;
+	backdrop-filter: blur(8px) !important;
+	-webkit-backdrop-filter: blur(8px) !important;
+}
+dialog.pkr-modal[open] {
+	animation: pkrFade .25s ease both;
+}
+dialog.pkr-modal[open] .pkr-card {
+	animation: pkrIn .32s var(--pk-ease) both;
+}
+dialog.pkr-modal.is-closing {
+	animation: pkrFade .18s ease reverse both;
+}
+dialog.pkr-modal.is-closing .pkr-card {
+	animation: pkrOut .18s ease both;
+}
+
+.pkr-card {
+	position: relative !important;
+	background: #FFFFFF !important;
+	color: #1E293B !important;
+	width: 100% !important;
+	max-width: 540px !important;
+	max-height: calc(100dvh - 48px) !important;
+	overflow-y: auto !important;
+	border-radius: 28px !important;
+	padding: 36px 32px 32px !important;
+	box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35) !important;
+	border: 1px solid rgba(197, 155, 39, 0.25) !important;
+	box-sizing: border-box !important;
+}
+.pkr-card .pkr-head {
+	margin-bottom: 24px !important;
+	padding-right: 48px !important;
+}
+.pkr-card .pkr-title {
+	font-size: 26px !important;
+	font-weight: 700 !important;
+	color: #0F172A !important;
+	margin: 0 0 6px 0 !important;
+	line-height: 1.2 !important;
+	letter-spacing: -0.02em !important;
+}
+.pkr-card .pkr-sub {
+	font-size: 14px !important;
+	color: #64748B !important;
+	margin: 0 !important;
+}
+.pkr-card .pkr-form {
+	display: flex !important;
+	flex-direction: column !important;
+	gap: 16px !important;
+	padding: 0 !important;
+}
+.pkr-card .pkr-f {
+	display: flex !important;
+	flex-direction: column !important;
+	gap: 6px !important;
+}
+.pkr-card .pkr-f span {
+	font-size: 13px !important;
+	font-weight: 600 !important;
+	color: #334155 !important;
+}
+.pkr-card .pkr-f span i {
+	color: #DC2626 !important;
+	font-style: normal !important;
+}
+.pkr-card .pkr-f input,
+.pkr-card .pkr-f select,
+.pkr-card .pkr-f textarea {
+	width: 100% !important;
+	padding: 12px 16px !important;
+	border: 1.5px solid #E2E8F0 !important;
+	border-radius: 12px !important;
+	font-size: 15px !important;
+	color: #0F172A !important;
+	background: #F8FAFC !important;
+	box-sizing: border-box !important;
+	transition: all 0.2s ease !important;
+	outline: none !important;
+}
+.pkr-card .pkr-f input:focus,
+.pkr-card .pkr-f select:focus,
+.pkr-card .pkr-f textarea:focus {
+	border-color: #C59B27 !important;
+	background: #FFFFFF !important;
+	box-shadow: 0 0 0 3px rgba(197, 155, 39, 0.15) !important;
+}
+.pkr-card .pkr-close {
+	position: absolute !important;
+	top: 20px !important;
+	right: 20px !important;
+	width: 40px !important;
+	height: 40px !important;
+	border-radius: 50% !important;
+	border: none !important;
+	background: #F1F5F9 !important;
+	color: #64748B !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	cursor: pointer !important;
+	transition: all 0.2s ease !important;
+	z-index: 10 !important;
+	padding: 0 !important;
+}
+.pkr-card .pkr-close svg {
+	width: 20px !important;
+	height: 20px !important;
+	pointer-events: none !important;
+}
+.pkr-card .pkr-close:hover {
+	background: #EF4444 !important;
+	color: #FFFFFF !important;
+	transform: rotate(90deg) !important;
+}
+@media (max-width: 600px) {
+	.pkr-card {
+		padding: 28px 20px 24px !important;
+		border-radius: 20px !important;
+	}
+	.pkr-card .pkr-title {
+		font-size: 22px !important;
+	}
+}
+

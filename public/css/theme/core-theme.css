@@ -1,0 +1,237 @@
+/* Dt. Gözde Hilal Morkoyunlu Diş Kliniği */
+
+:root {
+	--pk-ink: var(--e-global-color-primary, #373736);
+	--pk-sand: var(--e-global-color-secondary, #E6ECEB);
+	--pk-teal: var(--e-global-color-accent, #C59B27);
+	--pk-soft: #F5F7F7;
+	--pk-ease: cubic-bezier(.2, .7, .2, 1);
+	--pk-radius: 28px;
+}
+
+@keyframes pkRise  { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: none; } }
+@keyframes pkFade  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pkSpin  { to { transform: rotate(360deg); } }
+@keyframes pkFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+@keyframes pkZoom  { from { transform: scale(1.12); } to { transform: scale(1); } }
+@keyframes pkMarquee { to { transform: translateX(-50%); } }
+
+/* Açılış */
+.pk-in { opacity: 0; animation: pkRise .9s var(--pk-ease) forwards; }
+.pk-d1 { animation-delay: .12s; }
+.pk-d2 { animation-delay: .26s; }
+.pk-d3 { animation-delay: .42s; }
+.pk-d4 { animation-delay: .6s; }
+
+/* Elementor editöründe gizli kalmasın */
+.elementor-editor-active .pk-in { opacity: 1; animation: none; }
+
+/* Kaydırmaya bağlı belirme: destekleyen tarayıcılarda (Chrome, Edge, Safari 26+).
+   Desteklemeyenlerde içerik doğrudan görünür, hiçbir şey kaybolmaz. */
+@supports (animation-timeline: view()) {
+	.pk-rv  { animation: pkRise linear both; animation-timeline: view(); animation-range: entry 0% entry 55%; }
+	.pk-rvf { animation: pkFade linear both; animation-timeline: view(); animation-range: entry 0% entry 70%; }
+}
+
+/* Hover */
+.pk-lift { transition: transform .45s var(--pk-ease), box-shadow .45s var(--pk-ease); }
+.pk-lift:hover { transform: translateY(-8px); box-shadow: 0 24px 48px rgba(55, 55, 54, .14); }
+.pk-lift img { transition: transform .8s var(--pk-ease); }
+.pk-lift:hover img { transform: scale(1.05); }
+.pk-lift .elementor-widget-image,
+.pk-lift .elementor-image { overflow: hidden; border-radius: 20px; }
+
+.elementor-button { transition: transform .3s var(--pk-ease), background-color .3s, color .3s; }
+.elementor-button:hover { transform: translateY(-2px); }
+.pk-pill .elementor-button { border-radius: 999px; }
+
+.pk-row { transition: background-color .3s, color .3s, transform .3s var(--pk-ease); }
+.pk-row:hover { background-color: var(--pk-teal) !important; color: #FFFFFF; transform: translateX(6px); }
+
+/* Dekor */
+.pk-spin, .pk-spin svg { animation: pkSpin 28s linear infinite; }
+.pk-float { animation: pkFloat 6s ease-in-out infinite; }
+.pk-zoom { overflow: hidden; }
+.pk-zoom > .elementor-background-overlay,
+.pk-zoom::before { animation: pkZoom 1.8s var(--pk-ease) both; }
+
+/* Kayan logo şeridi */
+.pk-marquee { overflow: hidden; }
+.pk-marquee .pk-track { display: flex; flex-wrap: nowrap; width: max-content; animation: pkMarquee 26s linear infinite; }
+.pk-marquee:hover .pk-track { animation-play-state: paused; }
+.pk-marquee .pk-track > * { flex: none; }
+
+/* Hareketi azalt tercihi */
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation: none !important;
+		transition: none !important;
+	}
+	.pk-in, .pk-rv, .pk-rvf { opacity: 1 !important; transform: none !important; }
+}
+
+/* ---- 1.0.1: ek animasyonlar ----
+ *   pk-rvs      Ekrana girerken hafif büyüyerek belirir (kartlar, harita)
+ *   pk-clip     Başlık alttan perde açılır gibi belirir
+ *   pk-parallax Arka plan görseli kaydırırken yavaşça kayar (hero)
+ *   pk-stagger  Izgara içindeki kartlar sırayla belirir (dış konteynere verin)
+ */
+@keyframes pkScale { from { opacity: 0; transform: translateY(24px) scale(.94); } to { opacity: 1; transform: none; } }
+@keyframes pkClip  { from { clip-path: inset(0 0 100% 0); transform: translateY(30%); } to { clip-path: inset(0 0 0 0); transform: none; } }
+@keyframes pkPar   { from { background-position: 50% 30%; } to { background-position: 50% 70%; } }
+
+@supports (animation-timeline: view()) {
+	.pk-rvs { animation: pkScale linear both; animation-timeline: view(); animation-range: entry 0% entry 60%; }
+	.pk-clip .elementor-heading-title { animation: pkClip linear both; animation-timeline: view(); animation-range: entry 10% entry 70%; }
+	.pk-parallax { animation: pkPar linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; }
+	.pk-stagger > .e-con-inner > *:nth-child(3n+2), .pk-stagger > *:nth-child(3n+2) { animation-range: entry 8% entry 66%; }
+	.pk-stagger > .e-con-inner > *:nth-child(3n+3), .pk-stagger > *:nth-child(3n+3) { animation-range: entry 16% entry 72%; }
+}
+
+/* Butonlarda ışık süpürmesi */
+.pk-shine .elementor-button { position: relative; overflow: hidden; }
+.pk-shine .elementor-button::after {
+	content: ""; position: absolute; inset: 0; transform: translateX(-120%) skewX(-20deg);
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .35), transparent);
+	transition: transform .7s var(--pk-ease);
+}
+.pk-shine .elementor-button:hover::after { transform: translateX(120%) skewX(-20deg); }
+
+@media (prefers-reduced-motion: reduce) {
+	.pk-rvs, .pk-clip .elementor-heading-title, .pk-parallax { animation: none !important; clip-path: none !important; opacity: 1 !important; transform: none !important; }
+}
+
+/* ========================================================
+   Dt. Gözde Hilal Morkoyunlu Diş Kliniği - Gold Brand Theme
+   ======================================================== */
+:root {
+	--pk-teal: #C59B27 !important;
+	--pk-teal-2: #A67C1E !important;
+	--e-global-color-accent: #C59B27 !important;
+	--e-global-color-pkteal2: #A67C1E !important;
+	--swiper-theme-color: #C59B27 !important;
+	--swiper-navigation-color: #C59B27 !important;
+}
+
+/* Global Link Colors: strictly brand gold, no default blue */
+a {
+	color: #C59B27;
+	text-decoration: none;
+	transition: color 0.2s ease, opacity 0.2s ease;
+}
+a:hover, a:focus {
+	color: #A67C1E;
+}
+
+/* Header & Megamenu text stays clean ink, turns gold on hover */
+.pkh-nav a, .pkh-menu a, .pkm-label, .pk-mega a {
+	color: #373736 !important;
+}
+.pkh-nav a:hover, .pkh-menu a:hover, .pkm-label:hover, .pk-mega a:hover,
+.pkh-nav li.current-menu-item > a, .pkh-nav li.current-menu-ancestor > a {
+	color: #C59B27 !important;
+}
+
+/* Brand Buttons */
+.pk-btn--primary .elementor-button, .elementor-button.elementor-size-sm,
+a.pk-btn--primary, button.pk-btn--primary,
+a.pk-b--primary, button.pk-b--primary, .pkh-cta, .pkr-send {
+	background: #C59B27 !important;
+	border-color: #C59B27 !important;
+	color: #FFFFFF !important;
+}
+.pk-btn--primary .elementor-button:hover,
+a.pk-btn--primary:hover, button.pk-btn--primary:hover,
+a.pk-b--primary:hover, button.pk-b--primary:hover, .pkh-cta:hover, .pkr-send:hover {
+	background: #A67C1E !important;
+	border-color: #A67C1E !important;
+	color: #FFFFFF !important;
+}
+
+/* Accordion Question Titles */
+.elementor-accordion .elementor-tab-title,
+.elementor-accordion .elementor-tab-title a,
+.elementor-accordion-title {
+	color: #1E293B !important;
+}
+.elementor-accordion .elementor-tab-title:hover a,
+.elementor-accordion .elementor-tab-title.elementor-active a,
+.elementor-accordion .elementor-tab-title:hover .elementor-accordion-title,
+.elementor-accordion .elementor-tab-title.elementor-active .elementor-accordion-title {
+	color: #C59B27 !important;
+}
+
+/* Swiper Controls */
+.swiper-button-prev, .swiper-button-next,
+.elementor-swiper-button-prev, .elementor-swiper-button-next {
+	color: #C59B27 !important;
+	fill: #C59B27 !important;
+}
+.swiper-pagination-bullet-active {
+	background: #C59B27 !important;
+}
+
+/* Footer Logo: Pure White on dark footer background */
+.pkf-logo {
+	display: block !important;
+	line-height: 0 !important;
+}
+.pkf-logo img,
+.pkf-logo .pkl,
+.pkf-logo .pkl--white {
+	display: block !important;
+	height: 52px !important;
+	width: auto !important;
+	max-width: 240px !important;
+	object-fit: contain !important;
+	opacity: 1 !important;
+	visibility: visible !important;
+}
+
+/* Enhanced Radiant Luxury Gold Button & Accent Styling */
+.pk-btn--primary .elementor-button, .elementor-button.elementor-size-sm,
+a.pk-btn--primary, button.pk-btn--primary,
+a.pk-b--primary, button.pk-b--primary, .pkh-cta, .pkr-send {
+	background: linear-gradient(135deg, #D4AF37 0%, #C59B27 100%) !important;
+	border-color: #D4AF37 !important;
+	color: #FFFFFF !important;
+	box-shadow: 0 4px 15px rgba(197, 155, 39, 0.3) !important;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15) !important;
+}
+.pk-btn--primary .elementor-button:hover,
+a.pk-btn--primary:hover, button.pk-btn--primary:hover,
+a.pk-b--primary:hover, button.pk-b--primary:hover, .pkh-cta:hover, .pkr-send:hover {
+	background: linear-gradient(135deg, #C59B27 0%, #A67C1E 100%) !important;
+	border-color: #A67C1E !important;
+	box-shadow: 0 6px 20px rgba(197, 155, 39, 0.45) !important;
+}
+
+.pkf-more {
+	color: #D4AF37 !important;
+	font-weight: 600 !important;
+	transition: color 0.2s ease !important;
+}
+.pkf-more:hover {
+	color: #F3E5AB !important;
+	text-decoration: underline !important;
+}
+
+/* Global Heading Highlights & Emphasized Text: Luxury Brand Gold */
+.elementor-heading-title span,
+.elementor-heading-title strong,
+.elementor-heading-title b,
+.baslik span,
+.baslik strong,
+.baslik b,
+.elementor-element .elementor-heading-title span,
+.elementor-element .elementor-heading-title strong,
+.elementor-element .elementor-heading-title b,
+.pkt-r {
+	color: #C59B27 !important;
+}
+
+/* Marquee Separator Logo: Crisp Pure White */
+.pkm-sep {
+	opacity: 1 !important;
+}
+

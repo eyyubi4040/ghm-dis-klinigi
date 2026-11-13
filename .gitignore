@@ -1,0 +1,20 @@
+# Bağımlılıklar
+node_modules/
+
+# Veritabanı (hasta randevuları / mesajlar - KESİNLİKLE repoya girmemeli)
+data/*
+!data/.gitkeep
+
+# Gizli anahtarlar
+gcp-key.json
+*.json.key
+.env
+.env.*
+!.env.example
+
+# Geçici dosyalar
+scratch/
+*.log
+.DS_Store
+Thumbs.db
+

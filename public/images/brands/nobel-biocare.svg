@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" width="200" height="48" fill="none">
+  <g transform="translate(6, 6)">
+    <!-- Nobel Biocare Emblem -->
+    <circle cx="12" cy="18" r="12" fill="#002D56"/>
+    <path d="M5 19C9 10 18 10 21 16C17 22 10 23 5 19Z" fill="#E38800"/>
+    <!-- Text: Nobel Biocare -->
+    <text x="32" y="19" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="16.5" font-weight="800" fill="#002D56" letter-spacing="-0.3">Nobel Biocare</text>
+    <text x="32" y="28" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="8" font-weight="700" fill="#E38800" letter-spacing="1">ALL-ON-4 PIONEER</text>
+  </g>
+</svg>

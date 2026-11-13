@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" width="200" height="48" fill="none">
+  <g transform="translate(6, 6)">
+    <rect x="0" y="5" width="22" height="22" rx="5" fill="#009EE0"/>
+    <path d="M5 16L11 10L17 16L11 22Z" fill="white"/>
+    <text x="30" y="18" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="15.5" font-weight="800" fill="#0F172A" letter-spacing="0.5">MEDENTIKA</text>
+    <text x="30" y="28" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="8" font-weight="600" fill="#64748B">A Straumann Group Brand</text>
+  </g>
+</svg>

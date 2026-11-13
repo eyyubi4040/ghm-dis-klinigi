@@ -1,0 +1,373 @@
+import { writeFileSync } from "fs";
+
+const html = `<!doctype html>
+<html lang="tr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tedavilerimiz | Dt. Gözde Hilal Morkoyunlu Diş Kliniği Kırşehir</title>
+	<meta name="description" content="Dt. Gözde Hilal Morkoyunlu Diş Kliniği Kırşehir tüm tedaviler: Genel Diş, İmplant, Ortodonti & Şeffaf Plak, Estetik Gülüş Tasarımı, Pedodonti, Periodontoloji.">
+	<link rel="canonical" href="/tedaviler/">
+	<link rel="icon" href="/images/logo.png" sizes="32x32">
+	<link rel="icon" href="/images/logo.png" sizes="192x192">
+	<link rel="apple-touch-icon" href="/images/logo.png">
+
+	<link rel="stylesheet" id="hello-elementor-css" href="/css/theme/reset.css" media="all">
+	<link rel="stylesheet" id="hello-elementor-theme-style-css" href="/css/theme/theme.css" media="all">
+	<link rel="stylesheet" id="ghm-child-css" href="/css/theme/core-theme.css" media="all">
+	<link rel="stylesheet" id="ghm-layout-css" href="/css/theme/layout.css?v=20261113-url" media="all">
+	<link rel="stylesheet" id="ghm-pages-css" href="/css/theme/pages.css" media="all">
+	<link rel="stylesheet" id="ghm-randevu-css" href="/css/theme/randevu-modal.css" media="all">
+	<link rel="stylesheet" id="ghm-site-css" href="/css/theme/site.css" media="all">
+	<link rel="stylesheet" id="ghm-treatment-css" href="/css/theme/treatment-page.css" media="all">
+	<link rel="stylesheet" id="elementor-gf-poppins-css" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap&subset=latin-ext" media="all">
+
+	<style>
+		:root {
+			--pk-teal: #C59B27 !important;
+			--pk-teal-2: #A67C1E !important;
+		}
+		.cat-catalog-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+			gap: 30px;
+			margin: 40px 0 60px;
+		}
+		@media (max-width: 768px) {
+			.cat-catalog-grid {
+				grid-template-columns: 1fr;
+			}
+		}
+		.cat-catalog-card {
+			background: #FFFFFF;
+			border-radius: 20px;
+			border: 1px solid #E2E8F0;
+			overflow: hidden;
+			box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+			transition: all 0.3s ease;
+			display: flex;
+			flex-direction: column;
+		}
+		.cat-catalog-card:hover {
+			transform: translateY(-6px);
+			border-color: #C59B27;
+			box-shadow: 0 20px 40px rgba(197, 155, 39, 0.18);
+		}
+		.cat-card-img {
+			width: 100%;
+			height: 220px;
+			object-fit: cover;
+		}
+		.cat-card-body {
+			padding: 24px;
+			display: flex;
+			flex-direction: column;
+			flex: 1;
+		}
+		.cat-card-title {
+			font-size: 1.35rem;
+			font-weight: 800;
+			color: #0F172A;
+			margin-bottom: 10px;
+		}
+		.cat-card-desc {
+			font-size: 0.95rem;
+			color: #475569;
+			line-height: 1.6;
+			margin-bottom: 18px;
+			flex: 1;
+		}
+		.cat-sublinks {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 8px;
+			margin-bottom: 20px;
+		}
+		.cat-sublink {
+			font-size: 0.8rem;
+			font-weight: 600;
+			background: #F1F5F9;
+			color: #334155;
+			padding: 4px 10px;
+			border-radius: 6px;
+			text-decoration: none;
+			transition: all 0.2s;
+		}
+		.cat-sublink:hover {
+			background: #C59B27;
+			color: #FFFFFF;
+		}
+		.cat-view-btn {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			gap: 8px;
+			background: #0A0F16;
+			color: #FFFFFF !important;
+			font-size: 0.92rem;
+			font-weight: 700;
+			padding: 12px 20px;
+			border-radius: 10px;
+			text-decoration: none;
+			transition: all 0.25s ease;
+		}
+		.cat-catalog-card:hover .cat-view-btn {
+			background: #C59B27;
+		}
+	</style>
+</head>
+<body class="wp-singular page pk-no-band elementor-default">
+
+<header id="site-header" class="pkh" data-pkh>
+	<div class="pkh-in">
+		<a class="pkh-logo" href="/" aria-label="Dt. Gözde Hilal Morkoyunlu Diş Kliniği ana sayfa"><img class="pkl" src="/images/logo.png" alt="Dt. Gözde Hilal Morkoyunlu Diş Kliniği" style="height:54px; width:auto; max-width:240px; object-fit:contain;"></a>
+		<nav class="pkh-nav" aria-label="Ana menü">
+			<ul id="pkh-menu" class="pkh-menu">
+				<li><a href="/"><span class="pkm-label">Ana Sayfa</span></a></li>
+				<li><a href="/hakkimizda/"><span class="pkm-label">Hakkımızda</span></a></li>
+				<li class="current-menu-item"><a href="/tedaviler/"><span class="pkm-label" style="color:#C59B27;">Tedavilerimiz</span></a></li>
+				<li><a href="/ekibimiz/"><span class="pkm-label">Ekibimiz</span></a></li>
+				<li><a href="/galeri/"><span class="pkm-label">Kliniğimiz</span></a></li>
+				<li><a href="/anlasmali-kurumlar/"><span class="pkm-label">Anlaşmalı Kurumlar</span></a></li>
+				<li><a href="/iletisim/"><span class="pkm-label">İletişim</span></a></li>
+			</ul>
+		</nav>
+		<div class="pkh-act">
+			<a class="pkh-tel" href="tel:+903862134040"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>0386 213 40 40</a>
+			<a class="pk-b pk-b--primary pkh-cta" href="/randevu" data-pk-randevu>Randevu Oluştur</a>
+		</div>
+	</div>
+</header>
+
+<div class="pk-band">
+	<img class="pk-band-mark" src="/images/logo.png" alt="" width="555" height="554" decoding="async">
+	<div class="pk-band-in">
+		<nav class="pk-crumbs pk-in" aria-label="Sayfa yolu">
+			<span><span><a href="/">Anasayfa</a></span> <span class="pk-crumb-sep" aria-hidden="true">›</span> <span class="breadcrumb_last" aria-current="page">Tedavilerimiz</span></span>
+		</nav>
+		<span class="pk-badge" style="margin-bottom:12px; display:inline-block;">A'dan Z'ye İleri Diş Hekimliği Rehberi</span>
+		<h1 class="pk-band-title pk-in pk-d1">Tedavilerimiz</h1>
+		<p style="color:#E2E8F0; max-width:800px; margin:16px 0 0; font-size:1.1rem; line-height:1.7;">Dt. Gözde Hilal Morkoyunlu Diş Kliniği Kırşehir'de dünya standartlarında uygulanan tüm medikal, estetik ve cerrahi diş tedavileri.</p>
+	</div>
+</div>
+
+<main id="content" class="site-main" style="max-width:1320px; margin:40px auto 80px; padding:0 20px;">
+	<div class="cat-catalog-grid">
+
+		<!-- 1. Genel Diş Tedavileri -->
+		<div class="cat-catalog-card">
+			<img class="cat-card-img" src="/images/tedaviler/genel-dis.jpg" alt="Genel Diş Tedavileri">
+			<div class="cat-card-body">
+				<div class="pk-badge" style="margin-bottom:10px; width:fit-content;">Koruyucu &amp; Tedavi Edici</div>
+				<h2 class="cat-card-title">Genel Diş Tedavileri</h2>
+				<p class="cat-card-desc">Düzenli muayene, estetik diş dolgusu, kanal tedavisi, diş çekimi, 20'lik diş çekimi ve kırık diş tedavileri.</p>
+				<div class="cat-sublinks">
+					<a class="cat-sublink" href="/genel-dis-tedavileri/genel-dis-muayenesi-ve-dijital-teshis">Muayene</a>
+					<a class="cat-sublink" href="/genel-dis-tedavileri/dis-dolgusu">Dolgu</a>
+					<a class="cat-sublink" href="/genel-dis-tedavileri/kanal-tedavisi">Kanal Tedavisi</a>
+					<a class="cat-sublink" href="/genel-dis-tedavileri/dis-cekimi">Çekim</a>
+					<a class="cat-sublink" href="/genel-dis-tedavileri/20lik-dis-cekimi">20'lik Diş</a>
+				</div>
+				<a class="cat-view-btn" href="/genel-dis-tedavileri/">Tüm Bölümleri ve Açıklamaları Gör →</a>
+			</div>
+		</div>
+
+		<!-- 2. Ortodontik Tedaviler -->
+		<div class="cat-catalog-card">
+			<img class="cat-card-img" src="/images/tedaviler/invisalign.jpg" alt="Ortodontik Tedaviler">
+			<div class="cat-card-body">
+				<div class="pk-badge" style="margin-bottom:10px; width:fit-content;">Telsiz &amp; Braketli</div>
+				<h2 class="cat-card-title">Ortodontik Tedaviler</h2>
+				<p class="cat-card-desc">Diş teli tedavisi, Invisalign görünmez şeffaf plaklar ve estetik safir porselen braketler ile düzgün diş dizilimi.</p>
+				<div class="cat-sublinks">
+					<a class="cat-sublink" href="/ortodontik-tedaviler/dis-teli-tedavisi">Diş Teli</a>
+					<a class="cat-sublink" href="/ortodontik-tedaviler/invisalign">Invisalign (Şeffaf Plak)</a>
+					<a class="cat-sublink" href="/ortodontik-tedaviler/seffaf-braketli-tedavi">Şeffaf Braket</a>
+				</div>
+				<a class="cat-view-btn" href="/ortodontik-tedaviler/">Tüm Bölümleri ve Açıklamaları Gör →</a>
+			</div>
+		</div>
+
+		<!-- 3. İmplant Tedavisi -->
+		<div class="cat-catalog-card">
+			<img class="cat-card-img" src="/images/tedaviler/implant.jpg" alt="İmplant Tedavisi">
+			<div class="cat-card-body">
+				<div class="pk-badge" style="margin-bottom:10px; width:fit-content;">Cerrahi &amp; Kalıcı</div>
+				<h2 class="cat-card-title">İmplant Tedavisi</h2>
+				<p class="cat-card-desc">Tek diş implantı, çoklu diş köprüleri, All-on-4 tam çene sabit diş ve ileri kemik greftleme operasyonları.</p>
+				<div class="cat-sublinks">
+					<a class="cat-sublink" href="/implant-tedavisi/tek-dis-implant-tedavisi">Tek Diş İmplant</a>
+					<a class="cat-sublink" href="/implant-tedavisi/coklu-dis-implant-tedavisi">Çoklu İmplant</a>
+					<a class="cat-sublink" href="/implant-tedavisi/full-agiz-implant-tedavisi">All-on-4 Sabit</a>
+					<a class="cat-sublink" href="/implant-tedavisi/box-teknik">Kemik Grefti</a>
+				</div>
+				<a class="cat-view-btn" href="/implant-tedavisi/">Tüm Bölümleri ve Açıklamaları Gör →</a>
+			</div>
+		</div>
+
+		<!-- 4. Çocuk Diş Hekimliği -->
+		<div class="cat-catalog-card">
+			<img class="cat-card-img" src="/images/tedaviler/pedodonti.jpg" alt="Çocuk Diş Hekimliği">
+			<div class="cat-card-body">
+				<div class="pk-badge" style="margin-bottom:10px; width:fit-content;">Pedodonti</div>
+				<h2 class="cat-card-title">Çocuk Diş Hekimliği</h2>
+				<p class="cat-card-desc">Flor verniği, fissür örtücü koruyucu diş aşısı ve erken diş kayıplarında çarpıklığı önleyen yer tutucular.</p>
+				<div class="cat-sublinks">
+					<a class="cat-sublink" href="/cocuk-dis-hekimligi/fluorid-uygulamasi">Fluorid</a>
+					<a class="cat-sublink" href="/cocuk-dis-hekimligi/fissur-ortucu">Fissür Örtücü</a>
+					<a class="cat-sublink" href="/cocuk-dis-hekimligi/yer-tutucu-tedavisi">Yer Tutucu</a>
+				</div>
+				<a class="cat-view-btn" href="/cocuk-dis-hekimligi/">Tüm Bölümleri ve Açıklamaları Gör →</a>
+			</div>
+		</div>
+
+		<!-- 5. Koruyucu Diş Tedavileri -->
+		<div class="cat-catalog-card">
+			<img class="cat-card-img" src="/images/tedaviler/koruyucu.jpg" alt="Koruyucu Diş Tedavileri">
+			<div class="cat-card-body">
+				<div class="pk-badge" style="margin-bottom:10px; width:fit-content;">Önleyici Tıp</div>
+				<h2 class="cat-card-title">Koruyucu Diş Tedavileri</h2>
+				<p class="cat-card-desc">Kronik ağız kokusu tedavisi, hassas diş remineralizasyonu ve gece diş sıkma (bruksizm) gece plağı terapisi.</p>
+				<div class="cat-sublinks">
+					<a class="cat-sublink" href="/koruyucu-dis-tedavileri/agiz-kokusu-tedavisi">Ağız Kokusu</a>
+					<a class="cat-sublink" href="/koruyucu-dis-tedavileri/hassas-dis-tedavisi">Hassas Diş</a>
+					<a class="cat-sublink" href="/koruyucu-dis-tedavileri/dis-sikma-ve-gicirdatma-tedavisi">Diş Sıkma (Bruksizm)</a>
+				</div>
+				<a class="cat-view-btn" href="/koruyucu-dis-tedavileri/">Tüm Bölümleri ve Açıklamaları Gör →</a>
+			</div>
+		</div>
+
+		<!-- 6. Kozmetik Diş Hekimliği -->
+		<div class="cat-catalog-card">
+			<img class="cat-card-img" src="/images/tedaviler/kozmetik.jpg" alt="Kozmetik Diş Hekimliği">
+			<div class="cat-card-body">
+				<div class="pk-badge" style="margin-bottom:10px; width:fit-content;">Gülüş Tasarımı</div>
+				<h2 class="cat-card-title">Kozmetik Diş Hekimliği</h2>
+				<p class="cat-card-desc">Lazerle diş beyazlatma, lamine yaprak porselen, zirkonyum kaplama, E-max porselen, estetik dolgu ve bonding.</p>
+				<div class="cat-sublinks">
+					<a class="cat-sublink" href="/kozmetik-dis-hekimligi/dis-beyazlatma">Beyazlatma</a>
+					<a class="cat-sublink" href="/kozmetik-dis-hekimligi/lamina-dis-kaplama">Lamina</a>
+					<a class="cat-sublink" href="/kozmetik-dis-hekimligi/zirkonyum-kaplama">Zirkonyum</a>
+					<a class="cat-sublink" href="/kozmetik-dis-hekimligi/bonding-uygulamasi">Bonding</a>
+				</div>
+				<a class="cat-view-btn" href="/kozmetik-dis-hekimligi/">Tüm Bölümleri ve Açıklamaları Gör →</a>
+			</div>
+		</div>
+
+		<!-- 7. Eksik Diş Tedavileri -->
+		<div class="cat-catalog-card">
+			<img class="cat-card-img" src="/images/tedaviler/eksik-dis.jpg" alt="Eksik Diş Tedavileri">
+			<div class="cat-card-body">
+				<div class="pk-badge" style="margin-bottom:10px; width:fit-content;">Protetik Diş</div>
+				<h2 class="cat-card-title">Eksik Diş Tedavileri</h2>
+				<p class="cat-card-desc">İmplant uygulamaları, zirkonyum köprü protezleri ve full ağız kombine sabit/hareketli protez restorasyonları.</p>
+				<div class="cat-sublinks">
+					<a class="cat-sublink" href="/eksik-dis-tedavileri/implant-tedavisi">İmplant</a>
+					<a class="cat-sublink" href="/eksik-dis-tedavileri/kopru-porselen">Köprü Porselen</a>
+					<a class="cat-sublink" href="/eksik-dis-tedavileri/full-agiz-dis-tedavisi">Full Ağız Protez</a>
+				</div>
+				<a class="cat-view-btn" href="/eksik-dis-tedavileri/">Tüm Bölümleri ve Açıklamaları Gör →</a>
+			</div>
+		</div>
+
+		<!-- 8. Diş Eti Tedavileri -->
+		<div class="cat-catalog-card">
+			<img class="cat-card-img" src="/images/tedaviler/dis-eti.jpg" alt="Diş Eti Tedavileri">
+			<div class="cat-card-body">
+				<div class="pk-badge" style="margin-bottom:10px; width:fit-content;">Periodontoloji</div>
+				<h2 class="cat-card-title">Diş Eti (Periodontal) Tedaviler</h2>
+				<p class="cat-card-desc">Diş eti kanaması, subgingival küretaj, flap cerrahisi, gingivitis tedavisi ve ultrasonik diş taşı temizliği.</p>
+				<div class="cat-sublinks">
+					<a class="cat-sublink" href="/dis-eti-periodontal-hastaliklar-ve-tedavileri/dis-eti-tedavisi">Diş Eti Tedavisi</a>
+					<a class="cat-sublink" href="/dis-eti-periodontal-hastaliklar-ve-tedavileri/kuretaj-tedavisi">Küretaj</a>
+					<a class="cat-sublink" href="/dis-eti-periodontal-hastaliklar-ve-tedavileri/dis-tasi-temizligi">Diş Taşı Temizliği</a>
+				</div>
+				<a class="cat-view-btn" href="/dis-eti-periodontal-hastaliklar-ve-tedavileri/">Tüm Bölümleri ve Açıklamaları Gör →</a>
+			</div>
+		</div>
+
+		<!-- 9. Özel Diş Tedavileri -->
+		<div class="cat-catalog-card">
+			<img class="cat-card-img" src="/images/tedaviler/ozel-tedaviler.jpg" alt="Özel Diş Tedavileri">
+			<div class="cat-card-body">
+				<div class="pk-badge" style="margin-bottom:10px; width:fit-content;">Dijital &amp; Özel</div>
+				<h2 class="cat-card-title">Özel Diş Tedavileri</h2>
+				<p class="cat-card-desc">3D dijital gülüş tasarımı ve SMART protokolü ile cıva buharı filtreli güvenli amalgam dolgu sökümü.</p>
+				<div class="cat-sublinks">
+					<a class="cat-sublink" href="/ozel-dis-tedavileri/dijital-dis-hekimligi-ve-gulus-tasarimi">Dijital Gülüş Tasarımı</a>
+					<a class="cat-sublink" href="/ozel-dis-tedavileri/amalgam-dolgu-cikarma">Amalgam Dolgu Çıkarma</a>
+				</div>
+				<a class="cat-view-btn" href="/ozel-dis-tedavileri/">Tüm Bölümleri ve Açıklamaları Gör →</a>
+			</div>
+		</div>
+
+	</div>
+</main>
+
+<footer id="site-footer" class="pkf" aria-label="Site alt bilgisi">
+	<div class="pkf-in">
+		<div class="pkf-top">
+			<a class="pkf-logo" href="/" aria-label="Dt. Gözde Hilal Morkoyunlu Diş Kliniği ana sayfa"><img class="pkl pkl--white" src="/images/logo-beyaz.png" alt="Dt. Gözde Hilal Morkoyunlu Diş Kliniği" width="1956" height="649" decoding="async" loading="lazy" style="height:52px; width:auto; max-width:240px; object-fit:contain; display:block !important;"></a>
+			<div class="pkf-act">
+				<a class="pk-b pk-b--primary" href="/randevu" data-pk-randevu>Randevu Oluştur</a>
+				<a class="pk-b pk-b--outline-light" href="tel:+903862134040">0386 213 40 40</a>
+			</div>
+		</div>
+		<div class="pkf-info">
+			<div class="pkf-col">
+				<p class="pkf-h">Adresimiz</p>
+				<p>Nasuh Dede Mah. Prof. Dr. Mehmet Ali Altın Bulvarı No:14/A<br>Merkez / KIRŞEHİR</p>
+			</div>
+			<div class="pkf-col">
+				<p class="pkf-h">Çalışma Saatleri</p>
+				<p>Pazartesi – Cumartesi: 09:00 – 19:00<br>Pazar: Kapalı</p>
+			</div>
+			<div class="pkf-col">
+				<p class="pkf-h">İletişim &amp; Randevu</p>
+				<p>Telefon: <a href="tel:+903862134040">0386 213 40 40</a><br>WhatsApp: <a href="https://wa.me/905402134040">0540 213 40 40</a></p>
+			</div>
+		</div>
+	</div>
+	<div class="pkf-bar">
+		<div class="pkf-bar-in">
+			<span>© 2026 Dt. Gözde Hilal Morkoyunlu Diş Kliniği | Tüm hakları saklıdır.</span>
+			<span style="display:inline-flex; align-items:center; gap:8px;">Web Tasarım &amp; Yazılım: <a href="https://kirsehirwebdesign.com/" target="_blank" rel="noopener" title="Kırşehir Web Design" style="display:inline-flex; align-items:center; gap:6px; color:inherit; text-decoration:none;"><img src="/images/kirsehirwebdesign-logo-trans.png" alt="Kırşehir Web Design" style="height:30px; width:auto; vertical-align:middle;"></a></span>
+		</div>
+	</div>
+</footer>
+
+<dialog id="pk-randevu" class="pkr-modal">
+	<div class="pkr-card">
+		<header class="pkr-head">
+			<h2 class="pkr-title">Online Randevu Oluştur</h2>
+			<p class="pkr-sub">Dt. Gözde Hilal Morkoyunlu Diş Kliniği · Kırşehir</p>
+		</header>
+		<form id="pkr-form" class="pkr-form" method="post" action="/api/appointments">
+			<label class="pkr-f"><span>Adınız Soyadınız<i aria-hidden="true"> *</i></span><input name="ad_soyad" type="text" required placeholder="Adınız Soyadınız"></label>
+			<label class="pkr-f"><span>Telefon Numaranız<i aria-hidden="true"> *</i></span><input name="telefon" type="tel" required placeholder="05XX XXX XX XX"></label>
+			<label class="pkr-f"><span>İlgilendiğiniz Tedavi</span>
+				<select name="tedavi">
+					<option value="Genel Diş Tedavileri">Genel Diş Tedavileri</option>
+					<option value="İmplant Tedavisi">İmplant Tedavisi</option>
+					<option value="Ortodontik Tedaviler & Şeffaf Plak">Ortodontik Tedaviler &amp; Şeffaf Plak</option>
+					<option value="Kozmetik Diş Hekimliği">Kozmetik Diş Hekimliği</option>
+					<option value="Çocuk Diş Hekimliği">Çocuk Diş Hekimliği</option>
+					<option value="Diş Eti Tedavisi">Diş Eti Tedavisi</option>
+				</select>
+			</label>
+			<div class="pkr-foot">
+				<button class="pk-b pk-b--primary pkr-send" type="submit" style="width:100%;">Randevu Talebini Gönder</button>
+			</div>
+		</form>
+		<button class="pkr-close" type="button" aria-label="Kapat" data-pkr-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+	</div>
+</dialog>
+
+<script defer src="/js/theme/app-nav.js?v=20261113-url"></script>
+<script defer src="/js/theme/randevu-modal.js"></script>
+</body>
+</html>`;
+
+writeFileSync("E:\\PROJELER\\ghm-dis-klinigi\\public\\tedaviler.html", html, "utf-8");
+console.log("Updated public/tedaviler.html successfully!");
+

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" width="200" height="48" fill="none">
+  <g transform="translate(6, 6)">
+    <!-- Flower Icon -->
+    <g transform="translate(10, 16)">
+      <circle cx="0" cy="-6" r="2.2" fill="#00A3E0"/>
+      <circle cx="4.5" cy="-4.5" r="2.2" fill="#00A3E0"/>
+      <circle cx="6" cy="0" r="2.2" fill="#00A3E0"/>
+      <circle cx="4.5" cy="4.5" r="2.2" fill="#00A3E0"/>
+      <circle cx="0" cy="6" r="2.2" fill="#00A3E0"/>
+      <circle cx="-4.5" cy="4.5" r="2.2" fill="#00A3E0"/>
+      <circle cx="-6" cy="0" r="2.2" fill="#00A3E0"/>
+      <circle cx="-4.5" cy="-4.5" r="2.2" fill="#00A3E0"/>
+    </g>
+    <text x="26" y="19" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="17" font-weight="700" fill="#0F172A" letter-spacing="-0.3">invisalign</text>
+    <text x="27" y="28" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="8" font-weight="700" fill="#00A3E0" letter-spacing="0.8">CERTIFIED PROVIDER</text>
+  </g>
+</svg>

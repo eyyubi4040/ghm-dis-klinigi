@@ -1,0 +1,16 @@
+{
+  "name": "ghm-dis-klinigi",
+  "version": "1.0.0",
+  "description": "Dt. Gözde Hilal Morkoyunlu Diş Kliniği - Kırşehir Ağız ve Diş Sağlığı Merkezi",
+  "main": "server/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch server/index.ts",
+    "start": "bun server/index.ts",
+    "upload-gcs": "bun scripts/upload_gcs.ts"
+  },
+  "dependencies": {
+    "@google-cloud/storage": "^7.15.0"
+  }
+}
+

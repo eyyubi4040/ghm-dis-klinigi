@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Randevu Al | Dt. Gözde Hilal Morkoyunlu Diş Kliniği Kırşehir</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/images/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="/images/favicon-192x192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="msapplication-TileImage" content="/images/favicon-192x192.png">
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <aside class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <div class="top-bar-item"><span>Nasuh Dede Mah. M. Ali Altın Bulv. No:14/A, Kırşehir</span></div>
+      </div>
+      <div class="top-bar-right">
+        <div class="top-bar-item"><a href="tel:03862134040"><strong>0386 213 40 40</strong></a></div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="/" class="brand-logo">
+          <img src="/images/logo.png" alt="Dt. Gözde Hilal Morkoyunlu Diş Kliniği" width="210" height="60">
+        </a>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="/" class="nav-link">Ana Sayfa</a></li>
+          <li class="nav-item"><a href="/hakkimizda" class="nav-link">Kurumsal</a></li>
+          <li class="nav-item"><a href="/tedaviler" class="nav-link">Tedavilerimiz</a></li>
+          <li class="nav-item"><a href="/hekimimiz" class="nav-link">Hekimimiz</a></li>
+          <li class="nav-item"><a href="/galeri" class="nav-link">Gülüş Galerisi</a></li>
+          <li class="nav-item"><a href="/iletisim" class="nav-link">İletişim</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="/randevu" class="btn btn-gold btn-sm">Randevu Al</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Section -->
+  <section class="section booking-section" style="padding:70px 0 100px;">
+    <div class="container">
+      <div class="booking-grid">
+        <div class="booking-info-box">
+          <span class="hero-badge">Hızlı & Kolay Randevu</span>
+          <h2>Gülüşünüzü Ertelemeyin<br><span>Randevunuzu Oluşturun</span></h2>
+          <p>
+            Dt. Gözde Hilal Morkoyunlu Diş Kliniği'nden dilediğiniz gün ve saat için randevu talebinizi iletebilirsiniz. Asistanımız formu aldıktan hemen sonra sizi arayarak randevunuzu teyit edecektir.
+          </p>
+          <div style="background:rgba(255,255,255,0.05); padding:24px; border-radius:var(--radius-md); border:1px solid rgba(197,155,39,0.3);">
+            <strong style="color:var(--gold-light); display:block; margin-bottom:8px;">Acil Diş Ağrısı mı Yaşıyorsunuz?</strong>
+            <p style="font-size:0.92rem; margin-bottom:14px; color:#CBD5E1;">Acil vakalar ve nöbetçi hekim danışması için doğrudan telefon hattımızdan ulaşabilirsiniz.</p>
+            <a href="tel:03862134040" class="btn btn-gold btn-sm">Hemen Ara: 0386 213 40 40</a>
+          </div>
+        </div>
+
+        <div class="booking-card">
+          <form id="appointment-form" class="booking-form">
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="name">Adınız ve Soyadınız *</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Adınız Soyadınız" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Telefon Numaranız *</label>
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="05XX XXX XX XX" required>
+              </div>
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="treatment">Tedavi Türü *</label>
+                <select id="treatment" name="treatment" class="form-control" required>
+                  <option value="">Seçiniz...</option>
+                  <option value="Estetik Gülüş Tasarımı">Estetik Gülüş Tasarımı</option>
+                  <option value="Dijital İmplant Tedavisi">Dijital İmplant Tedavisi</option>
+                  <option value="Zirkonyum & Porselen Kaplama">Zirkonyum & Porselen Kaplama</option>
+                  <option value="Invisalign (Şeffaf Plak)">Invisalign (Şeffaf Plak)</option>
+                  <option value="Lazerle Diş Beyazlatma">Lazerle Diş Beyazlatma</option>
+                  <option value="Çocuk Diş Hekimliği (Pedodonti)">Çocuk Diş Hekimliği (Pedodonti)</option>
+                  <option value="Estetik Dolgu & Kanal Tedavisi">Estetik Dolgu & Kanal Tedavisi</option>
+                  <option value="Diş Taşı Temizliği & Diş Eti">Diş Taşı Temizliği & Diş Eti</option>
+                  <option value="Genel Diş Kontrolü">Genel Diş Kontrolü</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="email">E-Posta Adresi</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="ornek@email.com">
+              </div>
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="appointment_date">Randevu Tarihi *</label>
+                <input type="date" id="appointment_date" name="appointment_date" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="appointment_time">Randevu Saati *</label>
+                <select id="appointment_time" name="appointment_time" class="form-control" required>
+                  <option value="09:30">09:30</option>
+                  <option value="10:30">10:30</option>
+                  <option value="11:30">11:30</option>
+                  <option value="13:30">13:30</option>
+                  <option value="14:30">14:30</option>
+                  <option value="15:30">15:30</option>
+                  <option value="16:30">16:30</option>
+                  <option value="17:30">17:30</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="notes">Notlar veya Şikayet</label>
+              <textarea id="notes" name="notes" class="form-control" rows="3" placeholder="Sormak istediğiniz sorular ya da sağlık geçmişiniz..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-gold btn-lg" style="width:100%; margin-top:8px;">
+              Randevu Talebini Gönder
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 Dt. Gözde Hilal Morkoyunlu Diş Kliniği. Kırşehir.</div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 0.85rem; color: #94A3B8;">Tasarım:</span>
+          <a href="https://kirsehirwebdesign.com/" target="_blank" rel="noopener" title="Kırşehir Web Design">
+            <img src="/images/kirsehirwebdesign-logo-trans.png" alt="Kırşehir Web Design" style="height: 22px; width: auto; object-fit: contain;">
+          </a>
+        </div>
+        <div class="footer-bottom-links">
+          <a href="/">Ana Sayfa</a>
+          <a href="/tedaviler">Tedaviler</a>
+          <a href="/iletisim">İletişim</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
+

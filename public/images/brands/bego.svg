@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" width="200" height="48" fill="none">
+  <g transform="translate(6, 6)">
+    <rect x="0" y="5" width="22" height="22" rx="5" fill="#003D7A"/>
+    <text x="5" y="21" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="900" fill="white">B</text>
+    <text x="30" y="19" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="17" font-weight="800" fill="#003D7A" letter-spacing="0.8">BEGO</text>
+    <text x="30" y="28" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="8" font-weight="700" fill="#64748B" letter-spacing="1">GERMANY - SINCE 1890</text>
+  </g>
+</svg>
