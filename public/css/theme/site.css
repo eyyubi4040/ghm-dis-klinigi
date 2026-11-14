@@ -299,13 +299,46 @@
   filter: drop-shadow(0 15px 35px rgba(0,0,0,0.22)) !important;
 }
 @media (max-width: 767px) {
+  body.home .pkh-logo {
+    display: none !important;
+  }
+  body.home .pkh-in,
+  body.home .pkh.is-solid .pkh-in {
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+  }
   .elementor-14 .elementor-element.elementor-element-3b7678c > .pk-hero-plus,
   .pk-hero-plus {
-    right: 15px !important;
-    top: 75px !important;
-    width: min(230px, 55vw) !important;
+    left: 50% !important;
+    right: auto !important;
+    top: 25px !important;
+    transform: translateX(-50%) !important;
+    width: min(280px, 75vw) !important;
+    max-height: 95px !important;
+    opacity: 1 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  .pk-hero-plus .pk-float {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+    animation: pkFloat 6s ease-in-out infinite !important;
+  }
+  .pk-hero-plus .pk-float img {
+    width: 100% !important;
+    max-width: min(280px, 75vw) !important;
+    height: auto !important;
     max-height: 90px !important;
-    opacity: 0.85 !important;
+    margin: 0 auto !important;
+    object-fit: contain !important;
+    filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.32)) !important;
   }
 }
 .pkm-sep {

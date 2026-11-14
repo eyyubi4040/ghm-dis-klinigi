@@ -155,10 +155,12 @@
 	}
 	.pkh .pkh-cta, .pkh a.pk-b.pkh-cta { display: none !important; }
 	.pkh-act { gap: 2px; }
-	/* Logo ortada, sağda yalnızca menü ikonu */
+	/* Logo ortada, sağda yalnızca menü ikonu (Alt sayfalarda logo ortada kalır, ana sayfada üst logo gizlenip hareketli logo öne çıkar) */
 	.pkh-in, .pkh.is-solid .pkh-in { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
 	.pkh-logo { grid-column: 2; justify-self: center; }
 	.pkh-act { grid-column: 3; justify-self: end; }
+	body.home .pkh-logo { display: none !important; }
+	body.home .pkh-in, body.home .pkh.is-solid .pkh-in { display: flex !important; justify-content: flex-end !important; align-items: center !important; }
 	.pkh .pkh-telic { display: none; }
 	.pkh .pkh-tl { display: none !important; }
 	.pkh .pkh-toggle { width: 48px; height: 48px; padding: 0; margin-right: -6px; justify-content: center; }
