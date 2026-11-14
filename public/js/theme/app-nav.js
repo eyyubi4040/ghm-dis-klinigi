@@ -102,7 +102,7 @@
 	var segs = function (path) { return path.replace(/^\/+|\/+$/g, '').split('/'); };
 	var findSection = function (slug) {
 		if (!slug) { return null; }
-		try { return document.querySelector('[data-slug="' + slug.replace(/"/g, '') + '"]'); } catch (err) { return null; }
+		try { return document.querySelector('[data-slug="' + slug.replace(/"/g, '') + '"]') || document.getElementById(slug); } catch (err) { return null; }
 	};
 	var scrollToEl = function (el, smooth) {
 		if (!el) { return; }
@@ -135,7 +135,7 @@
 		history.replaceState(null, '', location.pathname + location.search);
 		if (id === 'randevu') { onReady(openRandevu); return; }
 		onReady(function () {
-			var el = document.getElementById(id);
+			var el = document.getElementById(id) || document.querySelector('[data-slug="' + id + '"]');
 			if (!el) { return; }
 			var slug = el.getAttribute('data-slug');
 			if (slug) { history.replaceState(null, '', (base === '/' || base === '/index' ? '' : base) + '/' + slug); }
