@@ -503,3 +503,62 @@
 .print-header {
   display: none;
 }
+
+/* --- Footer Bar Tek Sıra Yerleşimi (Alt Satıra Geçmeyi Önleme) --- */
+.pkf-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #A3AAA9;
+}
+
+.pkf-bar-in {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px 28px;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 14px 24px !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.pkf-bar-in > * {
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+}
+
+.pkf-legal-menu {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 18px !important;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pkf-bar-in img {
+  height: 24px !important;
+  width: auto !important;
+  vertical-align: middle !important;
+}
+
+@media (max-width: 1024px) {
+  .pkf-bar-in {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 12px 20px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .pkf-bar-in {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 10px !important;
+    padding: 18px 20px !important;
+  }
+}
+

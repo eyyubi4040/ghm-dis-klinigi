@@ -340,13 +340,18 @@ body.pk-no-band:not(.home) .site-main, body.pk-no-band:not(.home) main#content, 
 .pkf-legal { margin: 0; padding: 24px 0 32px; border-top: 1px solid rgba(255, 255, 255, .1); font-size: 12.5px; line-height: 1.7; color: #A3AAA9; }
 .pkf-legal strong { color: var(--pk-on-ink); font-weight: 500; }
 
-.pkf-bar { border-top: 1px solid rgba(255, 255, 255, .1); font-size: 13px; line-height: 1.6; color: #A3AAA9; }
-.pkf-bar-in { max-width: 1296px; margin: 0 auto; padding: 18px 28px; display: flex; flex-wrap: wrap; gap: 8px 28px; justify-content: space-between; align-items: center; }
+.pkf-bar { border-top: 1px solid rgba(255, 255, 255, .1); font-size: 12.5px; line-height: 1.6; color: #A3AAA9; }
+.pkf-bar-in { max-width: 1360px; margin: 0 auto; padding: 16px 28px; display: flex; flex-wrap: nowrap; gap: 12px 24px; justify-content: space-between; align-items: center; }
+.pkf-bar-in > * { white-space: nowrap; flex-shrink: 0; }
+.pkf-bar-in img { height: 24px; width: auto; vertical-align: middle; }
 .pkf-bar a { color: #A3AAA9; }
 .pkf-bar a:hover { color: var(--pk-teal); }
-.pkf-legal-menu { display: flex; flex-wrap: wrap; gap: 4px 20px; margin: 0; padding: 0; list-style: none; }
+.pkf-legal-menu { display: flex; flex-wrap: nowrap; gap: 4px 18px; margin: 0; padding: 0; list-style: none; }
 
-@media (max-width: 1024px) { .pkf-info { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 32px; } }
+@media (max-width: 1024px) {
+	.pkf-info { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 32px; }
+	.pkf-bar-in { flex-wrap: wrap; justify-content: center; text-align: center; gap: 10px 20px; }
+}
 @media (max-width: 767px) {
 	.pkf { border-radius: 28px 28px 0 0; margin-top: -28px; }
 	.pkf-in { padding: 0 20px; }
@@ -355,7 +360,7 @@ body.pk-no-band:not(.home) .site-main, body.pk-no-band:not(.home) main#content, 
 	.pkf-act .pk-b { flex: 1 1 auto; }
 	.pkf-social { margin-left: 0; width: 100%; }
 	.pkf-info { grid-template-columns: 1fr; gap: 28px; padding: 36px 0; }
-	.pkf-bar-in { padding: 18px 20px; flex-direction: column; align-items: flex-start; }
+	.pkf-bar-in { padding: 18px 20px; flex-direction: column; align-items: center; text-align: center; gap: 10px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
