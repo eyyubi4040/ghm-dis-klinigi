@@ -16,7 +16,7 @@
 	};
 
 	var loadRecaptcha = function () {
-		if (!cfg.site || rcLoaded) { return; }
+		if (!cfg.site || cfg.site === '6LdALbopAAAAAK7nZnPvARhLxUHJom8ZwNomYyoy' || rcLoaded) { return; }
 		rcLoaded = true;
 		var s = document.createElement('script');
 		s.src = 'https://www.google.com/recaptcha/api.js?render=' + encodeURIComponent(cfg.site);
@@ -148,7 +148,7 @@
 
 	/* Formlar: randevu penceresindeki form ve sayfadaki iletişim formu */
 	var getCaptcha = function (action) {
-		if (!cfg.site || !window.grecaptcha || !grecaptcha.execute) { return Promise.resolve(''); }
+		if (!cfg.site || cfg.site === '6LdALbopAAAAAK7nZnPvARhLxUHJom8ZwNomYyoy' || !window.grecaptcha || !grecaptcha.execute) { return Promise.resolve(''); }
 		return new Promise(function (resolve) {
 			grecaptcha.ready(function () {
 				grecaptcha.execute(cfg.site, { action: action }).then(resolve, function () { resolve(''); });

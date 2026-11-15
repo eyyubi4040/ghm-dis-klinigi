@@ -1233,3 +1233,11 @@ a[data-pk-sub],
 a[data-pk-skip] {
 	cursor: pointer;
 }
+
+/* reCAPTCHA badge hiding */
+.grecaptcha-badge {
+	visibility: hidden !important;
+	opacity: 0 !important;
+	pointer-events: none !important;
+	display: none !important;
+}

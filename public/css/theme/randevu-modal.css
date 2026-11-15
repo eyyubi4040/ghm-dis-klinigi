@@ -290,3 +290,12 @@ dialog.pkr-modal.is-closing .pkr-card {
 	}
 }
 
+/* reCAPTCHA badge hiding */
+.grecaptcha-badge {
+	visibility: hidden !important;
+	opacity: 0 !important;
+	pointer-events: none !important;
+	display: none !important;
+}
+
+
