@@ -54,9 +54,8 @@ const server = Bun.serve({
     // URL Aliases
     const aliases: Record<string, string> = {
       "dis-eti-tedavileri": "dis-eti-periodontal-hastaliklar-ve-tedavileri",
-      "emre-uslu": "hekimimiz",
-      "gokhan-torun": "hekimimiz",
-      "kivanc-yamanel": "hekimimiz",
+      "gozde-hilal-morkoyunlu": "hekimimiz",
+      "dt-gozde-hilal-morkoyunlu": "hekimimiz",
       "tedavilerimiz": "tedaviler",
     };
     if (aliases[cleanPath]) {
