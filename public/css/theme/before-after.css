@@ -54,24 +54,32 @@
   border: 1px solid rgba(197, 155, 39, 0.25);
   user-select: none;
   touch-action: pan-y;
+  background: transparent;
 }
 
 .ghm-ba-frame {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 1056 / 688;
   overflow: hidden;
-  background: #111;
+  background: transparent;
+  line-height: 0;
 }
 
 .ghm-ba-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center !important;
   pointer-events: none;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .ghm-ba-after-wrap {
@@ -88,17 +96,18 @@
 .ghm-ba-badge {
   position: absolute;
   bottom: 20px;
-  padding: 6px 14px;
+  padding: 8px 18px;
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.05em;
-  border-radius: 20px;
+  letter-spacing: 0.08em;
+  border-radius: 30px;
   color: #FFFFFF;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   pointer-events: none;
-  z-index: 5;
+  z-index: 15;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .ghm-ba-badge.before {
@@ -169,8 +178,16 @@
   .ghm-ba-title {
     font-size: 26px;
   }
-  .ghm-ba-frame {
-    aspect-ratio: 4 / 3;
+  .ghm-ba-badge {
+    bottom: 12px;
+    padding: 6px 14px;
+    font-size: 11px;
+  }
+  .ghm-ba-badge.before {
+    right: 12px;
+  }
+  .ghm-ba-badge.after {
+    left: 12px;
   }
   .ghm-ba-handle {
     width: 38px;
