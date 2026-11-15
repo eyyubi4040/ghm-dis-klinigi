@@ -27,16 +27,18 @@ dialog.pkr.is-closing::backdrop { animation: pkrFade .18s ease reverse both; }
 }
 .pkr-mark {
 	position: absolute;
-	top: -20px;
-	right: -20px;
-	width: 220px;
-	height: 220px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 270px;
+	height: 270px;
 	object-fit: contain;
-	opacity: .09;
+	opacity: .12;
 	pointer-events: none;
-	filter: drop-shadow(0 0 16px rgba(197, 155, 39, 0.25));
+	filter: drop-shadow(0 0 24px rgba(197, 155, 39, 0.35));
+	z-index: 0;
 }
-.pkr-head, .pkr-meta { position: relative; }
+.pkr-head, .pkr-meta { position: relative; z-index: 1; }
 dialog.pkr .pkr-title {
 	margin: 0; color: var(--pk-white); font-family: var(--pk-font);
 	font-size: clamp(30px, 3.2vw, 40px); line-height: 1.08; letter-spacing: -.04em; font-weight: 600;
@@ -109,7 +111,7 @@ dialog.pkr { overflow-x: hidden; }
 @media (max-width: 960px) {
 	.pkr-in { grid-template-columns: 1fr; }
 	.pkr-info { padding: 32px 28px; gap: 24px; }
-	.pkr-mark { width: 160px; height: 160px; top: -15px; right: -15px; opacity: .07; }
+	.pkr-mark { width: 200px; height: 200px; left: 50%; top: 50%; transform: translate(-50%, -50%); opacity: .10; }
 	.pkr-form { padding: 20px 16px 16px; }
 	.pkr-close { top: 20px; right: 20px; background: rgba(255, 255, 255, .12); color: var(--pk-white); }
 }
