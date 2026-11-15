@@ -25,7 +25,17 @@ dialog.pkr.is-closing::backdrop { animation: pkrFade .18s ease reverse both; }
 	position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; gap: 32px;
 	padding: 40px; border-radius: 20px; background: var(--pk-ink); color: var(--pk-on-ink);
 }
-.pkr-mark { position: absolute; right: -70px; bottom: -70px; width: 280px; height: 280px; opacity: .12; pointer-events: none; }
+.pkr-mark {
+	position: absolute;
+	top: -20px;
+	right: -20px;
+	width: 220px;
+	height: 220px;
+	object-fit: contain;
+	opacity: .09;
+	pointer-events: none;
+	filter: drop-shadow(0 0 16px rgba(197, 155, 39, 0.25));
+}
 .pkr-head, .pkr-meta { position: relative; }
 dialog.pkr .pkr-title {
 	margin: 0; color: var(--pk-white); font-family: var(--pk-font);
@@ -99,7 +109,7 @@ dialog.pkr { overflow-x: hidden; }
 @media (max-width: 960px) {
 	.pkr-in { grid-template-columns: 1fr; }
 	.pkr-info { padding: 32px 28px; gap: 24px; }
-	.pkr-mark { width: 200px; height: 200px; right: -50px; bottom: -50px; }
+	.pkr-mark { width: 160px; height: 160px; top: -15px; right: -15px; opacity: .07; }
 	.pkr-form { padding: 20px 16px 16px; }
 	.pkr-close { top: 20px; right: 20px; background: rgba(255, 255, 255, .12); color: var(--pk-white); }
 }
