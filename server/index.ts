@@ -97,7 +97,7 @@ const server = Bun.serve({
       return new Response(file, {
         headers: {
           "Content-Type": contentType,
-          "Cache-Control": ext === ".html" ? "no-cache" : "public, max-age=86400",
+          "Cache-Control": ext === ".html" ? "no-cache" : "public, max-age=300, must-revalidate",
         },
       });
     }
