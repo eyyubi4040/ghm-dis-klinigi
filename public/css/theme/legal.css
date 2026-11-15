@@ -1,0 +1,505 @@
+/* ===================================================================
+   GHM Diş Kliniği - KVKK & Yasal Sayfalar Tasarım Sistemi (legal.css)
+   =================================================================== */
+
+.legal-section {
+  padding: 64px 0 100px;
+  background: #FAFAFA;
+  color: #373736;
+  font-family: 'Plus Jakarta Sans', var(--pk-font, sans-serif);
+}
+
+.legal-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.legal-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+@media (max-width: 991px) {
+  .legal-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* --- Sticky Sidebar / İçindekiler --- */
+.legal-sidebar {
+  position: sticky;
+  top: 100px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 28px;
+  border: 1px solid rgba(197, 155, 39, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.legal-sidebar-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1E293B;
+  margin: 0 0 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #C59B27;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legal-toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.legal-toc-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #64748B;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  line-height: 1.4;
+}
+
+.legal-toc-link:hover,
+.legal-toc-link.is-active {
+  color: #C59B27;
+  background: rgba(197, 155, 39, 0.08);
+  transform: translateX(4px);
+}
+
+.legal-sidebar-box {
+  margin-top: 24px;
+  padding: 16px;
+  background: rgba(197, 155, 39, 0.05);
+  border-radius: 12px;
+  border: 1px dashed rgba(197, 155, 39, 0.35);
+  font-size: 0.82rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.legal-sidebar-box strong {
+  color: #C59B27;
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.88rem;
+}
+
+/* --- Belge Gövdesi (Content Area) --- */
+.legal-content {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 48px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.03);
+  line-height: 1.75;
+}
+
+@media (max-width: 767px) {
+  .legal-content {
+    padding: 24px 20px;
+  }
+}
+
+.legal-meta-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 24px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.legal-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.legal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(197, 155, 39, 0.1);
+  color: #926E17;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 100px;
+  border: 1px solid rgba(197, 155, 39, 0.25);
+}
+
+.legal-badge--neutral {
+  background: #F1F5F9;
+  color: #475569;
+  border-color: #E2E8F0;
+}
+
+.legal-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  color: #334155;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.legal-action-btn:hover {
+  border-color: #C59B27;
+  color: #C59B27;
+  box-shadow: 0 4px 12px rgba(197, 155, 39, 0.15);
+}
+
+/* Callout Box */
+.legal-callout {
+  background: linear-gradient(135deg, rgba(197, 155, 39, 0.08) 0%, rgba(212, 175, 55, 0.02) 100%);
+  border-left: 4px solid #C59B27;
+  padding: 20px 24px;
+  border-radius: 0 12px 12px 0;
+  margin: 24px 0 32px;
+  color: #334155;
+  font-size: 0.95rem;
+}
+
+.legal-callout h4 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  color: #1E293B;
+  font-weight: 700;
+}
+
+/* Tipografi & Bölümler */
+.legal-article {
+  margin-bottom: 40px;
+  scroll-margin-top: 120px;
+}
+
+.legal-article h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin: 0 0 16px;
+  padding-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.legal-article h2 span.num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #C59B27;
+  color: #FFFFFF;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.legal-article h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1E293B;
+  margin: 24px 0 12px;
+}
+
+.legal-article p {
+  margin: 0 0 14px;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.legal-article ul, .legal-article ol {
+  margin: 12px 0 20px;
+  padding-left: 24px;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.legal-article li {
+  margin-bottom: 8px;
+  line-height: 1.65;
+}
+
+/* Tablolar */
+.legal-table-wrapper {
+  overflow-x: auto;
+  margin: 20px 0 28px;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+}
+
+.legal-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.legal-table th {
+  background: #F8FAFC;
+  padding: 14px 18px;
+  font-weight: 700;
+  color: #1E293B;
+  border-bottom: 2px solid #E2E8F0;
+}
+
+.legal-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #F1F5F9;
+  color: #475569;
+  vertical-align: top;
+}
+
+.legal-table tr:last-child td {
+  border-bottom: none;
+}
+
+.legal-table tr:hover td {
+  background: rgba(197, 155, 39, 0.02);
+}
+
+/* Bilgi Kartları (Grid) */
+.legal-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.legal-mini-card {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.2s;
+}
+
+.legal-mini-card:hover {
+  border-color: rgba(197, 155, 39, 0.4);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+}
+
+.legal-mini-card h4 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  color: #C59B27;
+  font-weight: 700;
+}
+
+.legal-mini-card p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #64748B;
+  line-height: 1.5;
+}
+
+/* --- Başvuru Formu Özel Stilleri --- */
+.legal-form-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 32px;
+  margin-top: 24px;
+}
+
+.legal-form-step {
+  margin-bottom: 32px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.legal-form-step:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.legal-form-step-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1E293B;
+  margin: 0 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.legal-form-step-title .step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: #C59B27;
+  color: #FFFFFF;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 640px) {
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-group-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.form-group-item label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.form-group-item label span.req {
+  color: #DC2626;
+}
+
+.form-input-field,
+.form-select-field,
+.form-textarea-field {
+  padding: 12px 14px;
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-family: inherit;
+  color: #1E293B;
+  background: #FFFFFF;
+  transition: all 0.2s;
+}
+
+.form-input-field:focus,
+.form-select-field:focus,
+.form-textarea-field:focus {
+  outline: none;
+  border-color: #C59B27;
+  box-shadow: 0 0 0 3px rgba(197, 155, 39, 0.15);
+}
+
+.form-checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.form-checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: #475569;
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.form-checkbox-label input[type="checkbox"],
+.form-checkbox-label input[type="radio"] {
+  margin-top: 3px;
+  width: 18px;
+  height: 18px;
+  accent-color: #C59B27;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Yazdır / İndir Buton Bölümü */
+.print-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #E2E8F0;
+}
+
+/* --- Yazdırma Stilleri (@media print) --- */
+@media print {
+  .pkh, .pkf, .pk-mbar, .legal-sidebar, .pk-band, .legal-meta-bar, .print-actions, .skip-link, .pkr {
+    display: none !important;
+  }
+  
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+  }
+  
+  .legal-section {
+    padding: 0 !important;
+    background: #FFFFFF !important;
+  }
+  
+  .legal-container {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+  
+  .legal-grid {
+    display: block !important;
+  }
+  
+  .legal-content {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+  
+  .print-header {
+    display: block !important;
+    text-align: center;
+    border-bottom: 2px solid #C59B27;
+    padding-bottom: 14px;
+    margin-bottom: 24px;
+  }
+  
+  .legal-article h2 {
+    border-bottom: 1px solid #CCCCCC !important;
+  }
+}
+
+.print-header {
+  display: none;
+}

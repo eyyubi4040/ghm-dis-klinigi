@@ -47,10 +47,10 @@ const server = Bun.serve({
     // Temiz adresler: /sayfa/bolum -> sayfa.html (bölüme JS kaydırır)
     const parts = cleanPath.split("/");
     if (parts.length === 2 && !parts[1].includes(".") && /^[\w-]+$/.test(parts[0])
-        && existsSync(join(PUBLIC_DIR, `${parts[0]}.html`))) {
+      && existsSync(join(PUBLIC_DIR, `${parts[0]}.html`))) {
       cleanPath = parts[0];
     }
-    
+
     // URL Aliases
     const aliases: Record<string, string> = {
       "dis-eti-tedavileri": "dis-eti-periodontal-hastaliklar-ve-tedavileri",
