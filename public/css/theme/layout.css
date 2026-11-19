@@ -3,10 +3,14 @@
 /* Zemin: beyaz; sağ altta ekrana sabit, hafif yeşil parlama (Arkaplan A3) */
 html {
 	background: none;
+	overflow-x: hidden;
+	max-width: 100%;
 }
 
 body {
 	background-color: var(--pk-white);
+	overflow-x: hidden;
+	max-width: 100%;
 }
 
 body::before {
@@ -1163,10 +1167,10 @@ body.pk-no-band:not(.home) .elementor-location-single {
 	}
 
 	.pkf-bar-in {
-		flex-wrap: wrap;
-		justify-content: center;
-		text-align: center;
-		gap: 10px 20px;
+		flex-wrap: wrap !important;
+		justify-content: center !important;
+		text-align: center !important;
+		gap: 12px 20px !important;
 	}
 }
 
@@ -1174,43 +1178,137 @@ body.pk-no-band:not(.home) .elementor-location-single {
 	.pkf {
 		border-radius: 28px 28px 0 0;
 		margin-top: -28px;
+		padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)) !important;
 	}
 
 	.pkf-in {
-		padding: 0 20px;
+		padding: 0 16px;
 	}
 
 	.pkf-top {
-		padding: 48px 0 36px;
+		padding: 40px 0 32px;
 		flex-direction: column;
-		align-items: flex-start;
+		align-items: center;
+		text-align: center;
+		gap: 20px;
 	}
 
 	.pkf-act {
 		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 10px;
 	}
 
 	.pkf-act .pk-b {
-		flex: 1 1 auto;
+		width: 100%;
+		justify-content: center;
+		min-height: 48px;
+		box-sizing: border-box;
 	}
 
 	.pkf-social {
 		margin-left: 0;
 		width: 100%;
+		justify-content: center;
+		padding-top: 4px;
 	}
 
 	.pkf-info {
 		grid-template-columns: 1fr;
-		gap: 28px;
-		padding: 36px 0;
+		gap: 24px;
+		padding: 28px 0;
+		text-align: center;
+	}
+
+	.pkf-col li {
+		justify-content: center;
+		gap: 12px;
+		max-width: 100%;
+	}
+
+	.pkf-legal {
+		padding: 20px 0 24px;
+		font-size: 12px;
+		line-height: 1.65;
+		text-align: center;
+		overflow-wrap: break-word;
+		word-break: normal;
+	}
+
+	.pkf-bar {
+		width: 100%;
+		max-width: 100%;
+		overflow-x: hidden;
+		box-sizing: border-box;
 	}
 
 	.pkf-bar-in {
-		padding: 18px 20px;
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-		gap: 10px;
+		padding: 16px 14px calc(16px + env(safe-area-inset-bottom, 0px)) !important;
+		flex-direction: column !important;
+		align-items: center !important;
+		justify-content: center !important;
+		text-align: center !important;
+		gap: 12px !important;
+		width: 100% !important;
+		max-width: 100% !important;
+		box-sizing: border-box !important;
+		overflow-x: hidden !important;
+	}
+
+	.pkf-bar-in > * {
+		white-space: normal !important;
+		flex-shrink: 1 !important;
+		max-width: 100% !important;
+		text-align: center !important;
+		overflow-wrap: break-word !important;
+		word-break: break-word !important;
+		font-size: 12px !important;
+		line-height: 1.6 !important;
+	}
+
+	.pkf-legal-menu {
+		display: flex !important;
+		flex-wrap: wrap !important;
+		justify-content: center !important;
+		align-items: center !important;
+		gap: 6px 14px !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		list-style: none !important;
+		max-width: 100% !important;
+	}
+
+	.pkf-legal-menu li {
+		display: inline-flex !important;
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+
+	.pkf-legal-menu a {
+		white-space: nowrap !important;
+		font-size: 12px !important;
+		color: #A3AAA9 !important;
+		display: inline-block !important;
+		padding: 3px 0 !important;
+	}
+
+	.pkf-legal-menu a:hover {
+		color: var(--pk-teal) !important;
+	}
+
+	.pkf-bar-in .pkf-credit,
+	.pkf-bar-in span:has(a[href*="kirsehirwebdesign"]) {
+		display: inline-flex !important;
+		flex-wrap: wrap !important;
+		align-items: center !important;
+		justify-content: center !important;
+		gap: 6px 8px !important;
+		white-space: normal !important;
+		max-width: 100% !important;
+		text-align: center !important;
+		font-size: 12px !important;
 	}
 }
 

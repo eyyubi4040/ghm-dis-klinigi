@@ -553,12 +553,63 @@
 }
 
 @media (max-width: 767px) {
+  .pkf {
+    padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+
   .pkf-bar-in {
     flex-direction: column !important;
     align-items: center !important;
+    justify-content: center !important;
     text-align: center !important;
-    gap: 10px !important;
-    padding: 18px 20px !important;
+    gap: 12px !important;
+    padding: 16px 14px calc(16px + env(safe-area-inset-bottom, 0px)) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  .pkf-bar-in > * {
+    white-space: normal !important;
+    flex-shrink: 1 !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+  }
+
+  .pkf-legal-menu {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 6px 14px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .pkf-legal-menu li {
+    display: inline-flex !important;
+  }
+
+  .pkf-legal-menu a {
+    white-space: nowrap !important;
+    font-size: 12px !important;
+  }
+
+  .pkf-bar-in .pkf-credit,
+  .pkf-bar-in span:has(a[href*="kirsehirwebdesign"]) {
+    display: inline-flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px 8px !important;
+    white-space: normal !important;
+    max-width: 100% !important;
+    font-size: 12px !important;
   }
 }
 
